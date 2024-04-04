@@ -1,0 +1,25 @@
+# Arquivos de configuração
+.env
+
+# Módulos Node.js
+node_modules/
+
+# Arquivos de compilação TypeScript
+dist/
+
+# Arquivos de log
+logs/
+
+# Arquivos de backup
+*.bak
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Arquivos de cache
+.cache/
