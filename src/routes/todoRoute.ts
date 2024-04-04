@@ -34,9 +34,18 @@ router.post("/", async (req: Request, res: Response) => {
 });
 
 router.get("/", async (req: Request, res: Response) => {
-  const params = {
+  const status = req.query.status as string | undefined;
+
+  const params: AWS.DynamoDB.DocumentClient.ScanInput = {
     TableName: "Tasks",
+    FilterExpression: "attribute_exists(status)",
   };
+
+  if (status) {
+    params.FilterExpression += "AND #s = :status";
+    params.ExpressionAttributeNames = { "#s": "status" };
+    params.ExpressionAttributeValues = { ":status": status };
+  }
 
   try {
     const data = await dynamoDBClient.scan(params).promise();
