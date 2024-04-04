@@ -12,7 +12,3 @@ API RESTful simples em Node.js utilizando TypeScript, que será responsável por
 - Typescript
 - JWT
 - AWS DynamoDB
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE.md](LICENSE.md) para obter detalhes.
