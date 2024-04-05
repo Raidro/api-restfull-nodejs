@@ -1,9 +1,7 @@
-import { DynamoDB } from "aws-sdk";
+import AWS, { DynamoDB } from "aws-sdk";
 
-const dynamoDBClient = new DynamoDB.DocumentClient({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: "us-east-1",
-});
+AWS.config.update({ region: process.env.AWS_REGION });
+
+const dynamoDBClient = new DynamoDB.DocumentClient();
 
 export default dynamoDBClient;
