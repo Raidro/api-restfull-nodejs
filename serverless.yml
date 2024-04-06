@@ -1,0 +1,82 @@
+org: mateusreyes
+app: serverless-crud-v1
+service: serverless-crud-instance
+frameworkVersion: "3"
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  tableName: "Tasks"
+  esbuild:
+    bundle: true
+    minify: false
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [Tasks, Arn]
+  environment:
+    TASKS_TABLE: ${self:custom.tableName}
+
+functions:
+  createTask:
+    handler: src/functions/createTask/handler.handler
+    events:
+      - httpApi:
+          path: /tasks
+          method: post
+
+  listTasks:
+    handler: src/functions/listTask/handler.handler
+    events:
+      - httpApi:
+          path: /tasks
+          method: get
+
+  updateTask:
+    handler: src/functions/updateTask/handler.handler
+    events:
+      - httpApi:
+          path: /tasks/{taskId}
+          method: put
+
+  deleteTask:
+    handler: src/functions/deleteTask/handler.handler
+    events:
+      - httpApi:
+          path: /tasks/{taskId}
+          method: delete
+
+  login:
+    handler: src/functions/login/handler.handler
+    events:
+      - httpApi:
+          path: /login
+          method: post
+
+resources:
+  Resources:
+    Tasks:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: taskId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: taskId
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
+        TableName: ${self:custom.tableName}
