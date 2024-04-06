@@ -1,30 +1,19 @@
-import { Request, Response, NextFunction } from "express";
+// middleware/authenticateToken.ts
 import jwt from "jsonwebtoken";
 import jwtConfig from "../auth/jwtConfig";
 
-declare global {
-  namespace Express {
-    interface Request {
-      user?: any;
-    }
-  }
-}
+export const authenticateToken = (req: any, res: any, next: any) => {
+  const token = req.headers?.authorization?.split(" ")[1];
 
-const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-
-  if (token == null) {
-    return res.status(401).send("Token não fornecido");
+  if (!token) {
+    return res.status(401).json({ message: "Token não fornecido" });
   }
 
   jwt.verify(token, jwtConfig.secret, (err: any, user: any) => {
     if (err) {
-      return res.status(403).send("Token inválido");
+      return res.status(403).json({ message: "Token inválido" });
     }
     req.user = user;
     next();
   });
 };
-
-export default authenticateToken;

@@ -2,11 +2,11 @@ import express, { Request, Response } from "express";
 import dynamoDBClient from "../db/DBConnection";
 import { v4 as uuidv4 } from "uuid";
 import { Task } from "../models/Task";
-import authenticateToken from "../middleware/middleware";
+// import authenticateToken from "../middleware/middleware";
 
 const router = express.Router();
 
-router.use(authenticateToken);
+// router.use(authenticateToken);
 
 router.post("/", async (req: Request, res: Response) => {
   const { title, description } = req.body;

@@ -20,6 +20,8 @@
     "express": "^4.19.2",
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
+    "serverless": "^3.38.0",
+    "serverless-http": "^3.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3",
     "uuidv4": "^6.2.13"
