@@ -15,7 +15,7 @@
     "@types/node": "^20.12.3",
     "apollo-server-express": "^3.13.0",
     "apollo-server-lambda": "^3.13.0",
-    "aws-sdk": "^2.1592.0",
+    "aws-sdk": "^2.1594.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "graphql": "^16.8.1",
