@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import jwtConfig from "../auth/jwtConfig";
+import { jwtSecret } from "../auth/authController";
 
 export const authenticateToken = (req: any, res: any, next: any) => {
   const token = req.headers?.authorization?.split(" ")[1];
@@ -8,11 +8,14 @@ export const authenticateToken = (req: any, res: any, next: any) => {
     return res.status(401).json({ message: "Token não fornecido" });
   }
 
-  jwt.verify(token, jwtConfig.secret, (err: any, user: any) => {
+  jwt.verify(token, jwtSecret, (err: any, decoded: any) => {
     if (err) {
-      return res.status(403).json({ message: "Token inválido" });
+      console.error("Erro ao verificar o token JWT:", err);
+      return res
+        .status(403)
+        .json({ message: "Token inválido", error: err.message });
     }
-    req.user = user;
+    req.user = decoded;
     next();
   });
 };

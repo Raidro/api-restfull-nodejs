@@ -1,13 +1,10 @@
 import express, { Request, Response } from "express";
 import serverless from "serverless-http";
 import { DynamoDB } from "aws-sdk";
-import { authenticateToken } from "../../middleware/middleware";
 
 const app = express();
 
 app.use(express.json());
-
-app.use(authenticateToken);
 
 const dynamoDBClient = new DynamoDB.DocumentClient();
 

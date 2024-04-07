@@ -275,7 +275,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/createTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -305,7 +305,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/listTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -335,7 +335,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/updateTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -365,7 +365,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/deleteTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -395,7 +395,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/login/handler.handler",
         "Runtime": "nodejs16.x",
@@ -418,54 +418,54 @@
         "LoginLogGroup"
       ]
     },
-    "CreateTaskLambdaVersionG4c5FYlBtau7xgP8R5NfkBXalmeXcEwHPDPhtXqU": {
+    "CreateTaskLambdaVersionVMuMNEeEHyuP2dc4JTOA7WcTIqPlHmUj0efvEjXSk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTaskLambdaFunction"
         },
-        "CodeSha256": "Eo4RbdrZmGns1DVPytoC35NpSZCGmhXs3Pe4ih9V1YM="
+        "CodeSha256": "bTNOaEpvK2feXJTMmaQd3YovbqQ/1TknpChzxfu7EbA="
       }
     },
-    "ListTasksLambdaVersionvbKUfNlPw3VHRafGNYgjfqBpRwwq2dwIF1FKqeFfa8": {
+    "ListTasksLambdaVersion17Tg38wv6qPayLX5fhvH05gtg5VZKFP4taIq3DN0c": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListTasksLambdaFunction"
         },
-        "CodeSha256": "Eo4RbdrZmGns1DVPytoC35NpSZCGmhXs3Pe4ih9V1YM="
+        "CodeSha256": "bTNOaEpvK2feXJTMmaQd3YovbqQ/1TknpChzxfu7EbA="
       }
     },
-    "UpdateTaskLambdaVersionFyV4jx3LjOw3a6D7ZQD5UuxZnZZFfo6RRr1UdZHw": {
+    "UpdateTaskLambdaVersion6Anq5mJlEw3NQgEpYtbecfmzh5dHvW6L6UPtxF90O20": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateTaskLambdaFunction"
         },
-        "CodeSha256": "Eo4RbdrZmGns1DVPytoC35NpSZCGmhXs3Pe4ih9V1YM="
+        "CodeSha256": "bTNOaEpvK2feXJTMmaQd3YovbqQ/1TknpChzxfu7EbA="
       }
     },
-    "DeleteTaskLambdaVersion1D14utBevVvWIzCgUziUuZ1CpIXMON5LyYL2cCY0FI": {
+    "DeleteTaskLambdaVersionfSKSKvSeHUBS0GsocC4TyCGAmRpESdUg8zBX0MyZj1w": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteTaskLambdaFunction"
         },
-        "CodeSha256": "Eo4RbdrZmGns1DVPytoC35NpSZCGmhXs3Pe4ih9V1YM="
+        "CodeSha256": "bTNOaEpvK2feXJTMmaQd3YovbqQ/1TknpChzxfu7EbA="
       }
     },
-    "LoginLambdaVersionBZtp6vqwbnnuTTE3A6ZdzbjjEPEJcx3NkMr4FnMTw": {
+    "LoginLambdaVersionjWaaxLWSLSU1mjOnjSRmpvKjbGzqHUc0V9zKsAdSOM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LoginLambdaFunction"
         },
-        "CodeSha256": "Eo4RbdrZmGns1DVPytoC35NpSZCGmhXs3Pe4ih9V1YM="
+        "CodeSha256": "bTNOaEpvK2feXJTMmaQd3YovbqQ/1TknpChzxfu7EbA="
       }
     },
     "ApiGatewayRestApi": {
@@ -752,7 +752,7 @@
         "LoginLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1712467357858": {
+    "ApiGatewayDeployment1712468843490": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1062,7 +1062,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712467363219-2024-04-07T05:22:43.219Z/custom-resources.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712468849154-2024-04-07T05:47:29.154Z/custom-resources.zip"
         },
         "FunctionName": "serverless-crud-instance-dev-custom-resource-apigw-cw-role",
         "Handler": "api-gateway-cloud-watch-role/handler.handler",
@@ -1123,7 +1123,7 @@
     "CreateTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTaskLambdaVersionG4c5FYlBtau7xgP8R5NfkBXalmeXcEwHPDPhtXqU"
+        "Ref": "CreateTaskLambdaVersionVMuMNEeEHyuP2dc4JTOA7WcTIqPlHmUj0efvEjXSk"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-CreateTaskLambdaFunctionQualifiedArn"
@@ -1132,7 +1132,7 @@
     "ListTasksLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListTasksLambdaVersionvbKUfNlPw3VHRafGNYgjfqBpRwwq2dwIF1FKqeFfa8"
+        "Ref": "ListTasksLambdaVersion17Tg38wv6qPayLX5fhvH05gtg5VZKFP4taIq3DN0c"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-ListTasksLambdaFunctionQualifiedArn"
@@ -1141,7 +1141,7 @@
     "UpdateTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateTaskLambdaVersionFyV4jx3LjOw3a6D7ZQD5UuxZnZZFfo6RRr1UdZHw"
+        "Ref": "UpdateTaskLambdaVersion6Anq5mJlEw3NQgEpYtbecfmzh5dHvW6L6UPtxF90O20"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-UpdateTaskLambdaFunctionQualifiedArn"
@@ -1150,7 +1150,7 @@
     "DeleteTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteTaskLambdaVersion1D14utBevVvWIzCgUziUuZ1CpIXMON5LyYL2cCY0FI"
+        "Ref": "DeleteTaskLambdaVersionfSKSKvSeHUBS0GsocC4TyCGAmRpESdUg8zBX0MyZj1w"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-DeleteTaskLambdaFunctionQualifiedArn"
@@ -1159,7 +1159,7 @@
     "LoginLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LoginLambdaVersionBZtp6vqwbnnuTTE3A6ZdzbjjEPEJcx3NkMr4FnMTw"
+        "Ref": "LoginLambdaVersionjWaaxLWSLSU1mjOnjSRmpvKjbGzqHUc0V9zKsAdSOM"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-LoginLambdaFunctionQualifiedArn"
