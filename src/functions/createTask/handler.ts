@@ -3,9 +3,6 @@ import serverless from "serverless-http";
 import { DynamoDB } from "aws-sdk";
 import { v4 as uuidv4 } from "uuid";
 import { authenticateToken } from "../../middleware/middleware";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const app = express();
 
