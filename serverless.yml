@@ -14,7 +14,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs14.x
+  runtime: nodejs20.x
   iam:
     role:
       statements:
@@ -35,35 +35,35 @@ functions:
   createTask:
     handler: src/functions/createTask/handler.handler
     events:
-      - httpApi:
+      - http:
           path: /tasks
           method: post
 
   listTasks:
     handler: src/functions/listTask/handler.handler
     events:
-      - httpApi:
+      - http:
           path: /tasks
           method: get
 
   updateTask:
     handler: src/functions/updateTask/handler.handler
     events:
-      - httpApi:
+      - http:
           path: /tasks/{taskId}
           method: put
 
   deleteTask:
     handler: src/functions/deleteTask/handler.handler
     events:
-      - httpApi:
+      - http:
           path: /tasks/{taskId}
           method: delete
 
   login:
     handler: src/functions/login/handler.handler
     events:
-      - httpApi:
+      - http:
           path: /login
           method: post
 
