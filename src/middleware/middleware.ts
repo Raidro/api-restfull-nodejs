@@ -1,4 +1,3 @@
-// middleware/authenticateToken.ts
 import jwt from "jsonwebtoken";
 import jwtConfig from "../auth/jwtConfig";
 

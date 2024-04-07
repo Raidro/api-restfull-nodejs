@@ -11,7 +11,7 @@ app.use(authenticateToken);
 
 const dynamoDBClient = new DynamoDB.DocumentClient();
 
-app.get("/", async (req: Request, res: Response) => {
+app.get("/tasks", async (req: Request, res: Response) => {
   const { status } = req.query;
 
   let params: AWS.DynamoDB.DocumentClient.ScanInput = {

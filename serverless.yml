@@ -37,35 +37,35 @@ functions:
     events:
       - http:
           path: /tasks
-          method: post
+          method: POST
 
   listTasks:
     handler: src/functions/listTask/handler.handler
     events:
       - http:
           path: /tasks
-          method: get
+          method: GET
 
   updateTask:
     handler: src/functions/updateTask/handler.handler
     events:
       - http:
           path: /tasks/{taskId}
-          method: put
+          method: PUT
 
   deleteTask:
     handler: src/functions/deleteTask/handler.handler
     events:
       - http:
           path: /tasks/{taskId}
-          method: delete
+          method: DELETE
 
   login:
     handler: src/functions/login/handler.handler
     events:
       - http:
           path: /login
-          method: post
+          method: POST
 
 resources:
   Resources:
