@@ -16,5 +16,4 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// Transformar o app Express em um handler para AWS Lambda
 export const handler = serverless(app);
