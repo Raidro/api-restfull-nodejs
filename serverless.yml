@@ -60,13 +60,6 @@ functions:
           path: /tasks/{taskId}
           method: DELETE
 
-  login:
-    handler: src/functions/login/handler.handler
-    events:
-      - http:
-          path: /login
-          method: POST
-
 resources:
   Resources:
     Tasks:

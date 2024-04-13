@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import serverless from "serverless-http";
 import { DynamoDB } from "aws-sdk";
 
@@ -8,22 +8,26 @@ app.use(express.json());
 
 const dynamoDBClient = new DynamoDB.DocumentClient();
 
-app.delete("/:taskId", async (req: Request, res: Response) => {
-  const { taskId } = req.params;
-
-  const params = {
-    TableName: process.env.TASK_TABLE || "Tasks",
-    Key: { taskId },
-  };
-
+app.delete("/tasks/:taskId", async (req, res) => {
   try {
-    const data = await dynamoDBClient.get(params).promise();
+    const { taskId } = req.params;
 
-    if (!data.Item) {
-      return res.status(404).send("Item não encontrado.");
+    const getItemParams = {
+      TableName: process.env.TASK_TABLE || "Tasks",
+      Key: { taskId },
+    };
+    const existingItem = await dynamoDBClient.get(getItemParams).promise();
+
+    if (!existingItem.Item) {
+      return res.status(404).json({ error: "Item não encontrado." });
     }
 
-    await dynamoDBClient.delete(params).promise();
+    const deleteParams = {
+      TableName: process.env.TASK_TABLE || "Tasks",
+      Key: { taskId },
+    };
+
+    await dynamoDBClient.delete(deleteParams).promise();
     res.send("Tarefa excluída com sucesso");
   } catch (error) {
     console.error("Erro ao excluir a tarefa:", error);

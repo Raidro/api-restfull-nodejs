@@ -95,12 +95,6 @@
         "LogGroupName": "/aws/lambda/serverless-crud-instance-dev-deleteTask"
       }
     },
-    "LoginLogGroup": {
-      "Type": "AWS::Logs::LogGroup",
-      "Properties": {
-        "LogGroupName": "/aws/lambda/serverless-crud-instance-dev-login"
-      }
-    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -253,12 +247,6 @@
                         "DeleteTaskLogGroup",
                         "Arn"
                       ]
-                    },
-                    {
-                      "Fn::GetAtt": [
-                        "LoginLogGroup",
-                        "Arn"
-                      ]
                     }
                   ]
                 }
@@ -275,7 +263,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712794624234-2024-04-11T00:17:04.234Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/createTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -305,7 +293,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712794624234-2024-04-11T00:17:04.234Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/listTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -335,7 +323,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712794624234-2024-04-11T00:17:04.234Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/updateTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -365,7 +353,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/serverless-crud-instance.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712794624234-2024-04-11T00:17:04.234Z/serverless-crud-instance.zip"
         },
         "Handler": "src/functions/deleteTask/handler.handler",
         "Runtime": "nodejs16.x",
@@ -388,84 +376,44 @@
         "DeleteTaskLogGroup"
       ]
     },
-    "LoginLambdaFunction": {
-      "Type": "AWS::Lambda::Function",
-      "Properties": {
-        "Code": {
-          "S3Bucket": {
-            "Ref": "ServerlessDeploymentBucket"
-          },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/serverless-crud-instance.zip"
-        },
-        "Handler": "src/functions/login/handler.handler",
-        "Runtime": "nodejs16.x",
-        "FunctionName": "serverless-crud-instance-dev-login",
-        "MemorySize": 1024,
-        "Timeout": 6,
-        "Environment": {
-          "Variables": {
-            "TASKS_TABLE": "Tasks"
-          }
-        },
-        "Role": {
-          "Fn::GetAtt": [
-            "IamRoleLambdaExecution",
-            "Arn"
-          ]
-        }
-      },
-      "DependsOn": [
-        "LoginLogGroup"
-      ]
-    },
-    "CreateTaskLambdaVersionf4wzXvLjhfSOgCmlIERGJlCzSrcvNE0pwNiYPRcRSLk": {
+    "CreateTaskLambdaVersionYmOPkDAc1KIo6CyqVwHLtv4NmPBFClBdAfB3V0s": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTaskLambdaFunction"
         },
-        "CodeSha256": "0CrT7ffDBVkeSJEDMzdbHxP6vyndS1gCqxW3PtHlvDA="
+        "CodeSha256": "0d3McMt0aBDMvUOQRI8QwIEP4nht86NQzMUoc3vnEDM="
       }
     },
-    "ListTasksLambdaVersionRKmBYQl2NPLGMfl1aeqJPltXiCwkoSazomi43EOdkEg": {
+    "ListTasksLambdaVersionWJAnoHnTZUV537LeGDUBqpssmpEdK7wocsryFD8j8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ListTasksLambdaFunction"
         },
-        "CodeSha256": "0CrT7ffDBVkeSJEDMzdbHxP6vyndS1gCqxW3PtHlvDA="
+        "CodeSha256": "0d3McMt0aBDMvUOQRI8QwIEP4nht86NQzMUoc3vnEDM="
       }
     },
-    "UpdateTaskLambdaVersionbgrTpkBLEfjH4Q5NU5yHrGsZvXuEY4aOw73fKQTd0E": {
+    "UpdateTaskLambdaVersionwVxULpbfWDXG20aCsWfBSTtH5S4V3PWmGzl4g1BVRg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateTaskLambdaFunction"
         },
-        "CodeSha256": "0CrT7ffDBVkeSJEDMzdbHxP6vyndS1gCqxW3PtHlvDA="
+        "CodeSha256": "0d3McMt0aBDMvUOQRI8QwIEP4nht86NQzMUoc3vnEDM="
       }
     },
-    "DeleteTaskLambdaVersionDC0MBrjvGN9KlJ5D4EdaLVneaNYQyaOdTcGz5yIT4": {
+    "DeleteTaskLambdaVersionesSpJhixPAZtZxVnu5GxQIaiZlMaccMOoIOlbdDPM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteTaskLambdaFunction"
         },
-        "CodeSha256": "0CrT7ffDBVkeSJEDMzdbHxP6vyndS1gCqxW3PtHlvDA="
-      }
-    },
-    "LoginLambdaVersionUM8dudifALe1FqBHmaNL3QxW0rwfAORPfQmTNCzPiQ": {
-      "Type": "AWS::Lambda::Version",
-      "DeletionPolicy": "Retain",
-      "Properties": {
-        "FunctionName": {
-          "Ref": "LoginLambdaFunction"
-        },
-        "CodeSha256": "0CrT7ffDBVkeSJEDMzdbHxP6vyndS1gCqxW3PtHlvDA="
+        "CodeSha256": "0d3McMt0aBDMvUOQRI8QwIEP4nht86NQzMUoc3vnEDM="
       }
     },
     "ApiGatewayRestApi": {
@@ -502,21 +450,6 @@
           "Ref": "ApiGatewayResourceTasks"
         },
         "PathPart": "{taskId}",
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        }
-      }
-    },
-    "ApiGatewayResourceLogin": {
-      "Type": "AWS::ApiGateway::Resource",
-      "Properties": {
-        "ParentId": {
-          "Fn::GetAtt": [
-            "ApiGatewayRestApi",
-            "RootResourceId"
-          ]
-        },
-        "PathPart": "login",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -706,53 +639,7 @@
         "DeleteTaskLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayMethodLoginPost": {
-      "Type": "AWS::ApiGateway::Method",
-      "Properties": {
-        "HttpMethod": "POST",
-        "RequestParameters": {},
-        "ResourceId": {
-          "Ref": "ApiGatewayResourceLogin"
-        },
-        "RestApiId": {
-          "Ref": "ApiGatewayRestApi"
-        },
-        "ApiKeyRequired": false,
-        "AuthorizationType": "NONE",
-        "Integration": {
-          "IntegrationHttpMethod": "POST",
-          "Type": "AWS_PROXY",
-          "Uri": {
-            "Fn::Join": [
-              "",
-              [
-                "arn:",
-                {
-                  "Ref": "AWS::Partition"
-                },
-                ":apigateway:",
-                {
-                  "Ref": "AWS::Region"
-                },
-                ":lambda:path/2015-03-31/functions/",
-                {
-                  "Fn::GetAtt": [
-                    "LoginLambdaFunction",
-                    "Arn"
-                  ]
-                },
-                "/invocations"
-              ]
-            ]
-          }
-        },
-        "MethodResponses": []
-      },
-      "DependsOn": [
-        "LoginLambdaPermissionApiGateway"
-      ]
-    },
-    "ApiGatewayDeployment1712793392474": {
+    "ApiGatewayDeployment1712794619350": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -764,8 +651,7 @@
         "ApiGatewayMethodTasksPost",
         "ApiGatewayMethodTasksGet",
         "ApiGatewayMethodTasksTaskidVarPut",
-        "ApiGatewayMethodTasksTaskidVarDelete",
-        "ApiGatewayMethodLoginPost"
+        "ApiGatewayMethodTasksTaskidVarDelete"
       ]
     },
     "CreateTaskLambdaPermissionApiGateway": {
@@ -916,43 +802,6 @@
         }
       }
     },
-    "LoginLambdaPermissionApiGateway": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "FunctionName": {
-          "Fn::GetAtt": [
-            "LoginLambdaFunction",
-            "Arn"
-          ]
-        },
-        "Action": "lambda:InvokeFunction",
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:",
-              {
-                "Ref": "AWS::Partition"
-              },
-              ":execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "ApiGatewayRestApi"
-              },
-              "/*/*"
-            ]
-          ]
-        }
-      }
-    },
     "ApiGatewayLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
@@ -1062,7 +911,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/serverless-crud-instance/dev/1712793397810-2024-04-10T23:56:37.810Z/custom-resources.zip"
+          "S3Key": "serverless/serverless-crud-instance/dev/1712794624234-2024-04-11T00:17:04.234Z/custom-resources.zip"
         },
         "FunctionName": "serverless-crud-instance-dev-custom-resource-apigw-cw-role",
         "Handler": "api-gateway-cloud-watch-role/handler.handler",
@@ -1123,7 +972,7 @@
     "CreateTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTaskLambdaVersionf4wzXvLjhfSOgCmlIERGJlCzSrcvNE0pwNiYPRcRSLk"
+        "Ref": "CreateTaskLambdaVersionYmOPkDAc1KIo6CyqVwHLtv4NmPBFClBdAfB3V0s"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-CreateTaskLambdaFunctionQualifiedArn"
@@ -1132,7 +981,7 @@
     "ListTasksLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ListTasksLambdaVersionRKmBYQl2NPLGMfl1aeqJPltXiCwkoSazomi43EOdkEg"
+        "Ref": "ListTasksLambdaVersionWJAnoHnTZUV537LeGDUBqpssmpEdK7wocsryFD8j8"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-ListTasksLambdaFunctionQualifiedArn"
@@ -1141,7 +990,7 @@
     "UpdateTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateTaskLambdaVersionbgrTpkBLEfjH4Q5NU5yHrGsZvXuEY4aOw73fKQTd0E"
+        "Ref": "UpdateTaskLambdaVersionwVxULpbfWDXG20aCsWfBSTtH5S4V3PWmGzl4g1BVRg"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-UpdateTaskLambdaFunctionQualifiedArn"
@@ -1150,19 +999,10 @@
     "DeleteTaskLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteTaskLambdaVersionDC0MBrjvGN9KlJ5D4EdaLVneaNYQyaOdTcGz5yIT4"
+        "Ref": "DeleteTaskLambdaVersionesSpJhixPAZtZxVnu5GxQIaiZlMaccMOoIOlbdDPM"
       },
       "Export": {
         "Name": "sls-serverless-crud-instance-dev-DeleteTaskLambdaFunctionQualifiedArn"
-      }
-    },
-    "LoginLambdaFunctionQualifiedArn": {
-      "Description": "Current Lambda function version",
-      "Value": {
-        "Ref": "LoginLambdaVersionUM8dudifALe1FqBHmaNL3QxW0rwfAORPfQmTNCzPiQ"
-      },
-      "Export": {
-        "Name": "sls-serverless-crud-instance-dev-LoginLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
